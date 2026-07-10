@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Khurana Studio"
+version = "1.0.0"
+id = "artifacts/khurana-studio"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23343
+
+[services.development]
+run = "pnpm --filter @workspace/khurana-studio run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/khurana-studio", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/khurana-studio/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23343"
+BASE_PATH = "/"

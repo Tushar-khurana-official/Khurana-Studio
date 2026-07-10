@@ -1,0 +1,655 @@
+You are an award-winning UI/UX Designer and Senior Full Stack Developer.
+
+Your task is to build a modern, premium, luxury photography studio website for my business.
+
+Studio Name:
+KHURANA STUDIO
+
+IMPORTANT:
+I will provide my official logo later. Design the website in such a way that replacing the temporary logo with my official logo requires changing only one image file.
+
+========================================================
+
+WEBSITE STYLE
+
+The overall design should look similar to premium editorial websites and luxury photography brands.
+
+Design Inspiration:
+- Luxury
+- Minimal
+- Editorial
+- Cinematic
+- Premium
+- Apple level clean UI
+- High-end portfolio
+- Soft animations
+- Large whitespace
+- Beautiful typography
+- Glassmorphism where appropriate
+- Smooth transitions
+- Scroll based animations
+- Modern rounded components
+- Elegant layouts
+
+Avoid:
+❌ Bright colors
+❌ Cartoon style
+❌ Cheap gradients
+❌ Overly colorful UI
+
+========================================================
+
+COLOR PALETTE
+
+Primary Background:
+#F7F4EF
+
+Secondary Background:
+#ECE6DD
+
+Primary Text:
+#1C1C1C
+
+Secondary Text:
+#666666
+
+Luxury Accent:
+#B08D57
+
+Button Hover:
+#8D6E3D
+
+Border:
+rgba(176,141,87,0.2)
+
+Cards:
+White with subtle shadows
+
+Overall feel:
+Luxury photography brand.
+
+========================================================
+
+TYPOGRAPHY
+
+Heading Font:
+Cormorant Garamond
+
+Alternative:
+Playfair Display
+
+Body Font:
+Poppins
+
+Buttons:
+Inter
+
+Large editorial headings.
+
+========================================================
+
+TECH STACK
+
+Frontend
+
+React
+Vite
+TypeScript
+TailwindCSS
+Framer Motion
+GSAP
+React Router
+React Hook Form
+Shadcn UI
+Lucide Icons
+Lenis Smooth Scroll
+Swiper.js
+
+Backend
+
+Node.js
+Express.js
+
+Database
+
+MongoDB
+
+Authentication
+
+Firebase Google Authentication
+
+Storage
+
+Cloudinary
+
+Deployment Ready
+
+Vercel
+Render
+
+========================================================
+
+MAKE IT RESPONSIVE
+
+Desktop
+Laptop
+Tablet
+Mobile
+
+The mobile version should feel like a premium app.
+
+========================================================
+
+ANIMATIONS
+
+Luxury animations only.
+
+Hero fade animation
+
+Image reveal
+
+Parallax scrolling
+
+Smooth scrolling
+
+Cards hover
+
+Button ripple
+
+Text reveal
+
+Cursor interaction
+
+Loading screen
+
+Page transitions
+
+Gallery animation
+
+Counter animation
+
+Image zoom
+
+Glass blur
+
+Everything should feel premium.
+
+========================================================
+
+NAVBAR
+
+Sticky navbar
+
+Transparent initially
+
+Glass effect on scroll
+
+Logo
+
+Menu
+
+Home
+
+About
+
+Portfolio
+
+Services
+
+Packages
+
+Client Stories
+
+Gallery
+
+Awards
+
+Blog
+
+Contact
+
+Book Session
+
+Google Login button
+
+========================================================
+
+HERO SECTION
+
+Full screen.
+
+Large cinematic background image.
+
+Dark overlay.
+
+Editorial heading.
+
+Example:
+
+Capturing Stories,
+Creating Timeless Memories.
+
+Subheading
+
+Luxury Wedding,
+Portrait,
+Fashion,
+Commercial,
+Product Photography.
+
+Buttons
+
+Book Your Session
+
+Explore Portfolio
+
+Animated scroll indicator.
+
+========================================================
+
+ABOUT SECTION
+
+Beautiful split layout.
+
+Large studio image.
+
+Studio story.
+
+Mission.
+
+Vision.
+
+Experience.
+
+Why choose Khurana Studio.
+
+Animated statistics.
+
+10+
+Years Experience
+
+1000+
+Happy Clients
+
+5000+
+Photos Delivered
+
+4.9★
+Client Rating
+
+========================================================
+
+SERVICES
+
+Luxury cards.
+
+Wedding Photography
+
+Pre Wedding
+
+Engagement
+
+Fashion
+
+Portrait
+
+Product Photography
+
+Commercial Shoot
+
+Event Coverage
+
+Drone Photography
+
+Videography
+
+Album Design
+
+Photo Editing
+
+Each card should have
+
+Image
+
+Title
+
+Description
+
+View Details
+
+========================================================
+
+FEATURED PORTFOLIO
+
+Editorial masonry layout.
+
+Category filter.
+
+Wedding
+
+Portrait
+
+Fashion
+
+Events
+
+Commercial
+
+Products
+
+Landscape
+
+Click image
+
+Open premium lightbox.
+
+========================================================
+
+OUR PROCESS
+
+1 Consultation
+
+2 Booking
+
+3 Planning
+
+4 Shoot Day
+
+5 Editing
+
+6 Delivery
+
+Timeline animation.
+
+========================================================
+
+PRICING
+
+Beautiful luxury pricing cards.
+
+Basic
+
+Premium
+
+Luxury
+
+Enterprise
+
+Buttons
+
+Book Now
+
+========================================================
+
+CLIENT TESTIMONIALS
+
+Glass cards.
+
+Client photo.
+
+Review.
+
+Star rating.
+
+Google Reviews integration ready.
+
+========================================================
+
+INSTAGRAM SECTION
+
+Grid layout.
+
+Instagram API ready.
+
+Auto fetch posts later.
+
+========================================================
+
+BLOG SECTION
+
+Latest articles.
+
+Photography Tips
+
+Wedding Guide
+
+Editing Secrets
+
+Camera Gear
+
+SEO friendly.
+
+========================================================
+
+FAQ
+
+Accordion.
+
+========================================================
+
+CONTACT
+
+Luxury layout.
+
+Studio Address
+
+Phone
+
+Email
+
+Google Map
+
+Working Hours
+
+Social Icons
+
+========================================================
+
+FOOTER
+
+Elegant footer.
+
+Quick Links
+
+Services
+
+Social Media
+
+Newsletter
+
+Copyright
+
+========================================================
+
+BOOKING SYSTEM
+
+Create the frontend and backend architecture so these APIs can be integrated later without major code changes.
+
+Prepare modular service folders and API wrappers for:
+
+✅ Google Authentication (Firebase Auth)
+
+✅ Booking & Scheduling API
+(appointment calendar, time slots, availability)
+
+✅ Payment Gateway API
+(Razorpay, Stripe, PayPal ready)
+
+✅ Client Gallery & Proofing API
+(password-protected client albums, image selection, favorites, download permissions)
+
+✅ Studio CRM API
+(client management, inquiries, leads, follow-ups, invoices)
+
+✅ Instagram Graph API
+(auto-fetch latest Instagram posts and reels)
+
+All integrations should be abstracted into separate service files with placeholder methods and environment variables.
+
+========================================================
+
+ADMIN DASHBOARD (Future Ready)
+
+Prepare a protected admin panel with navigation and placeholder pages for:
+
+Dashboard
+Bookings
+Clients
+Gallery
+Portfolio
+Payments
+Invoices
+Blog
+Reviews
+CRM
+Analytics
+Settings
+
+No full backend logic is required now, but structure everything cleanly for future integration.
+
+========================================================
+
+SEO
+
+SEO optimized
+
+Open Graph
+
+Twitter Cards
+
+Schema.org
+
+Image optimization
+
+Lazy loading
+
+Sitemap
+
+robots.txt
+
+========================================================
+
+PERFORMANCE
+
+Lighthouse Score above 95
+
+Lazy loading
+
+Code splitting
+
+Image optimization
+
+Responsive images
+
+Modern best practices
+
+========================================================
+
+ACCESSIBILITY
+
+WCAG compliant
+
+Keyboard navigation
+
+Proper contrast
+
+Alt text
+
+ARIA labels
+
+========================================================
+
+FINAL REQUIREMENTS
+
+Write clean, scalable, production-ready code with proper folder structure and comments.
+
+Use reusable React components and modular architecture.
+
+All future APIs should plug in without requiring redesign.
+
+The final website should feel like a premium luxury photography brand comparable to high-end editorial studios, with smooth animations, cinematic visuals, and an unforgettable user experience.
+========================================================
+LOGO INTEGRATION
+
+The official logo for the website has already been designed and will be provided.
+
+The logo features:
+
+• Black premium background
+• Metallic silver typography
+• Circular emblem
+• DSLR Camera in the center
+• Hand holding the camera
+• Text:
+  K S
+  KHURANA STUDIO
+
+This logo is the primary brand identity.
+
+Design the entire website around this logo.
+
+Requirements:
+
+• Place the logo on the left side of the navbar.
+• Use a transparent PNG version if available.
+• Maintain proper spacing around the logo.
+• Never distort, recolor or modify the logo.
+• The logo should appear premium and sharp on all screen sizes.
+• Use favicon generated from this logo.
+• Add smooth logo hover animation.
+• Footer should contain the complete logo.
+• Loading screen should display an animated version of the logo.
+• When scrolling back to top, subtly animate the logo.
+
+Brand inspiration should match the logo:
+Luxury
+Minimal
+Editorial
+Professional
+Cinematic
+Modern
+Timeless
+
+The UI colors, typography and spacing should complement the metallic silver logo.
+
+Primary Background
+#F7F7F5
+
+Secondary Background
+#ECECEC
+
+Dark Background
+#111111
+
+Primary Text
+#171717
+
+Secondary Text
+#666666
+
+Accent Color
+#C0C0C0 (Metallic Silver)
+
+Accent Hover
+#A8A8A8
+
+Borders
+rgba(192,192,192,.25)
+
+Cards
+White with subtle shadows
+
+Buttons
+Black background
+White text
+
+Hover
+Silver border with black text
+
+Selection Color
+#C0C0C0
+
+Glass Blur
+rgba(255,255,255,.08)
+
+========================================================

@@ -3,20 +3,33 @@ info:
   # Do not change the title, if the title changes, the import paths will be broken
   title: Api
   version: 0.1.0
-  description: API specification
+  description: Khurana Studio API
 servers:
   - url: /api
     description: Base API path
 tags:
   - name: health
     description: Health operations
+  - name: bookings
+    description: Booking & inquiry management
+  - name: services
+    description: Photography services
+  - name: portfolio
+    description: Portfolio items
+  - name: testimonials
+    description: Client testimonials
+  - name: blog
+    description: Blog posts
+  - name: contact
+    description: Contact form submissions
+  - name: stats
+    description: Studio statistics
 paths:
   /healthz:
     get:
       operationId: healthCheck
       tags: [health]
       summary: Health check
-      description: Returns server health status
       responses:
         "200":
           description: Healthy
@@ -24,6 +37,251 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+
+  /bookings:
+    post:
+      operationId: createBooking
+      tags: [bookings]
+      summary: Submit a booking inquiry
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BookingInput"
+      responses:
+        "201":
+          description: Booking created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Booking"
+        "400":
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+    get:
+      operationId: listBookings
+      tags: [bookings]
+      summary: List all bookings (admin)
+      parameters:
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [pending, confirmed, completed, cancelled]
+        - name: serviceType
+          in: query
+          schema:
+            type: string
+      responses:
+        "200":
+          description: List of bookings
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Booking"
+
+  /bookings/{id}:
+    get:
+      operationId: getBooking
+      tags: [bookings]
+      summary: Get a single booking
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Booking details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Booking"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+    patch:
+      operationId: updateBookingStatus
+      tags: [bookings]
+      summary: Update booking status
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BookingStatusUpdate"
+      responses:
+        "200":
+          description: Updated booking
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Booking"
+
+  /services:
+    get:
+      operationId: listServices
+      tags: [services]
+      summary: List all services
+      responses:
+        "200":
+          description: List of photography services
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Service"
+
+  /portfolio:
+    get:
+      operationId: listPortfolio
+      tags: [portfolio]
+      summary: List portfolio items
+      parameters:
+        - name: category
+          in: query
+          schema:
+            type: string
+            enum: [wedding, portrait, fashion, events, commercial, products, landscape, all]
+        - name: featured
+          in: query
+          schema:
+            type: boolean
+      responses:
+        "200":
+          description: Portfolio items
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/PortfolioItem"
+
+  /testimonials:
+    get:
+      operationId: listTestimonials
+      tags: [testimonials]
+      summary: List client testimonials
+      parameters:
+        - name: featured
+          in: query
+          schema:
+            type: boolean
+      responses:
+        "200":
+          description: List of testimonials
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Testimonial"
+
+  /blog:
+    get:
+      operationId: listBlogPosts
+      tags: [blog]
+      summary: List blog posts
+      parameters:
+        - name: category
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 6
+      responses:
+        "200":
+          description: List of blog posts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/BlogPost"
+
+  /blog/{slug}:
+    get:
+      operationId: getBlogPost
+      tags: [blog]
+      summary: Get a blog post by slug
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Blog post
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BlogPost"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /contact:
+    post:
+      operationId: submitContact
+      tags: [contact]
+      summary: Submit a contact form
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ContactInput"
+      responses:
+        "201":
+          description: Contact submitted
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ContactSubmission"
+        "400":
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /stats:
+    get:
+      operationId: getStudioStats
+      tags: [stats]
+      summary: Get studio statistics
+      responses:
+        "200":
+          description: Studio stats
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StudioStats"
+
 components:
   schemas:
     HealthStatus:
@@ -34,3 +292,227 @@ components:
       required:
         - status
 
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+      required:
+        - error
+
+    BookingInput:
+      type: object
+      required: [name, email, phone, serviceType, preferredDate, message]
+      properties:
+        name:
+          type: string
+          minLength: 2
+        email:
+          type: string
+        phone:
+          type: string
+        serviceType:
+          type: string
+        preferredDate:
+          type: string
+        packageType:
+          type: ["string", "null"]
+        budget:
+          type: ["string", "null"]
+        message:
+          type: string
+          minLength: 10
+        venue:
+          type: ["string", "null"]
+
+    BookingStatusUpdate:
+      type: object
+      properties:
+        status:
+          type: string
+          enum: [pending, confirmed, completed, cancelled]
+        notes:
+          type: ["string", "null"]
+
+    Booking:
+      type: object
+      required: [id, name, email, phone, serviceType, preferredDate, message, status, createdAt]
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        serviceType:
+          type: string
+        packageType:
+          type: ["string", "null"]
+        budget:
+          type: ["string", "null"]
+        preferredDate:
+          type: string
+        message:
+          type: string
+        venue:
+          type: ["string", "null"]
+        status:
+          type: string
+          enum: [pending, confirmed, completed, cancelled]
+        notes:
+          type: ["string", "null"]
+        createdAt:
+          type: string
+          format: date-time
+
+    Service:
+      type: object
+      required: [id, title, description, imageUrl, category, sortOrder]
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        description:
+          type: string
+        imageUrl:
+          type: string
+        category:
+          type: string
+        icon:
+          type: ["string", "null"]
+        startingPrice:
+          type: ["string", "null"]
+        sortOrder:
+          type: integer
+
+    PortfolioItem:
+      type: object
+      required: [id, title, category, imageUrl, featured]
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        category:
+          type: string
+        imageUrl:
+          type: string
+        thumbnailUrl:
+          type: ["string", "null"]
+        description:
+          type: ["string", "null"]
+        featured:
+          type: boolean
+        aspectRatio:
+          type: ["string", "null"]
+        sortOrder:
+          type: integer
+
+    Testimonial:
+      type: object
+      required: [id, clientName, review, rating, serviceType, featured]
+      properties:
+        id:
+          type: integer
+        clientName:
+          type: string
+        clientLocation:
+          type: ["string", "null"]
+        clientPhotoUrl:
+          type: ["string", "null"]
+        review:
+          type: string
+        rating:
+          type: number
+        serviceType:
+          type: string
+        featured:
+          type: boolean
+        createdAt:
+          type: string
+          format: date-time
+
+    BlogPost:
+      type: object
+      required: [id, title, slug, excerpt, category, imageUrl, publishedAt, readTime]
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        slug:
+          type: string
+        excerpt:
+          type: string
+        content:
+          type: ["string", "null"]
+        category:
+          type: string
+        imageUrl:
+          type: string
+        author:
+          type: string
+        readTime:
+          type: string
+        publishedAt:
+          type: string
+          format: date-time
+
+    ContactInput:
+      type: object
+      required: [name, email, subject, message]
+      properties:
+        name:
+          type: string
+          minLength: 2
+        email:
+          type: string
+
+        phone:
+          type: ["string", "null"]
+        subject:
+          type: string
+        message:
+          type: string
+          minLength: 10
+
+    ContactSubmission:
+      type: object
+      required: [id, name, email, subject, message, createdAt]
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        email:
+          type: string
+        phone:
+          type: ["string", "null"]
+        subject:
+          type: string
+
+        message:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+
+    StudioStats:
+      type: object
+      required: [yearsExperience, happyClients, photosDelivered, clientRating, totalBookings, pendingBookings]
+      properties:
+        yearsExperience:
+          type: integer
+        happyClients:
+          type: integer
+        photosDelivered:
+          type: integer
+        clientRating:
+          type: number
+        totalBookings:
+          type: integer
+        pendingBookings:
+          type: integer
