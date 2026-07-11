@@ -1,0 +1,585 @@
+You are a Senior UI/UX Designer and Senior React + Vite + TypeScript + TailwindCSS Developer.
+
+Your task is NOT to redesign the website.
+
+The current website already has a strong luxury editorial aesthetic.
+
+Improve it until it looks comparable to premium photography studio websites such as Leica, Apple, Canon, Sony Alpha, and high-end wedding photography brands.
+
+Maintain the current design language while improving spacing, typography, animations, interactions, responsiveness, and overall polish.
+
+====================================================
+GENERAL GOAL
+====================================================
+
+The final website should feel:
+
+• Luxury
+• Cinematic
+• Editorial
+• Minimal
+• Premium
+• Elegant
+• Modern
+• Smooth
+• High-end
+
+Nothing should look cheap or template-based.
+
+====================================================
+1. HERO SECTION IMPROVEMENTS
+====================================================
+
+The current hero section is good but needs refinement.
+
+Reduce the heading size by approximately 20–25%.
+
+Current heading feels too dominant.
+
+Improve typography using:
+
+font-size:
+clamp(64px,8vw,110px)
+
+line-height:
+0.92
+
+letter-spacing:
+-2px
+
+Increase spacing between
+
+Heading
+
+Subtitle
+
+Buttons
+
+Add more breathing room.
+
+Hero text should be vertically centered perfectly.
+
+Do not let the text feel cramped.
+
+====================================================
+2. BACKGROUND IMAGE
+====================================================
+
+Keep the current hero image.
+
+Improve readability.
+
+Apply a luxury cinematic overlay.
+
+Use:
+
+linear-gradient(
+rgba(0,0,0,.35),
+rgba(0,0,0,.55)
+)
+
+The image should remain visible while making text easier to read.
+
+====================================================
+3. NAVBAR
+====================================================
+
+Transform the navbar into a luxury glass navbar.
+
+Requirements
+
+Sticky
+
+Blur
+
+Transparent
+
+Glass effect
+
+Shadow on scroll
+
+Border bottom
+
+Use
+
+backdrop-filter: blur(18px);
+
+Background
+
+rgba(18,18,18,.20)
+
+Border
+
+rgba(255,255,255,.08)
+
+When user scrolls
+
+Navbar should slightly darken
+
+Smooth transition
+
+0.4s
+
+Active page should have elegant underline animation.
+
+Hover should animate smoothly.
+
+====================================================
+4. LOGO
+====================================================
+
+Replace temporary logo with my official logo when available.
+
+Structure the code so changing the logo only requires replacing one image file.
+
+Navbar logo
+
+Footer logo
+
+Loading screen logo
+
+Favicon
+
+All should use the same source.
+
+====================================================
+5. BUTTONS
+====================================================
+
+Improve all buttons.
+
+Primary Button
+
+Black background
+
+White text
+
+Hover
+
+Slight lift
+
+Soft shadow
+
+Arrow slides to right
+
+Scale 1.03
+
+Transition
+
+300ms
+
+Secondary button
+
+Glass style
+
+Border animation
+
+Hover glow
+
+Cursor pointer
+
+====================================================
+6. CUSTOM CURSOR
+====================================================
+
+Create a luxury custom cursor.
+
+Small circle
+
+Outer ring
+
+Smooth easing
+
+Hover effects
+
+Scale over buttons
+
+Scale over portfolio images
+
+Disable on mobile.
+
+====================================================
+7. SCROLL ANIMATIONS
+====================================================
+
+Use GSAP or Framer Motion.
+
+Hero text
+
+Fade Up
+
+Portfolio cards
+
+Reveal
+
+About section
+
+Slide
+
+Services
+
+Stagger
+
+Testimonials
+
+Fade
+
+Pricing
+
+Scale
+
+Footer
+
+Fade
+
+Animations should trigger only once.
+
+No excessive motion.
+
+====================================================
+8. IMAGE INTERACTIONS
+====================================================
+
+Portfolio images
+
+Hover zoom
+
+Image tilt
+
+Soft shadow
+
+Caption fade
+
+Luxury transition
+
+500ms
+
+====================================================
+9. SECTION SPACING
+====================================================
+
+Increase spacing throughout the website.
+
+Every section should breathe.
+
+Top padding
+
+120px
+
+Bottom padding
+
+120px
+
+Mobile
+
+80px
+
+====================================================
+10. TYPOGRAPHY
+====================================================
+
+Use
+
+Cormorant Garamond
+
+for headings.
+
+Poppins
+
+for body.
+
+Inter
+
+for buttons.
+
+Improve typography hierarchy.
+
+No oversized paragraphs.
+
+Maximum paragraph width
+
+650px
+
+====================================================
+11. SERVICES
+====================================================
+
+Improve service cards.
+
+Luxury cards
+
+Rounded corners
+
+Glass hover
+
+Animated icon
+
+Image zoom
+
+Button animation
+
+Cards should align perfectly.
+
+====================================================
+12. PORTFOLIO
+====================================================
+
+Improve portfolio section.
+
+Luxury masonry layout.
+
+Filter animation.
+
+Hover zoom.
+
+Category tags.
+
+Lightbox.
+
+Previous
+
+Next
+
+Keyboard navigation.
+
+====================================================
+13. TESTIMONIALS
+====================================================
+
+Improve testimonials.
+
+Luxury cards.
+
+Large quotation mark.
+
+Avatar.
+
+Stars.
+
+Soft shadow.
+
+Glass effect.
+
+Auto play.
+
+Pause on hover.
+
+No overlapping.
+
+====================================================
+14. ABOUT SECTION
+====================================================
+
+Add elegant statistics.
+
+Years Experience
+
+Projects Completed
+
+Happy Clients
+
+Awards
+
+Animated counters.
+
+====================================================
+15. WHY CHOOSE US
+====================================================
+
+Create premium feature cards.
+
+Fast Delivery
+
+Creative Direction
+
+Professional Editing
+
+Luxury Albums
+
+Drone Coverage
+
+Experienced Team
+
+====================================================
+16. INSTAGRAM
+====================================================
+
+Improve Instagram section.
+
+Luxury grid.
+
+Hover overlay.
+
+Instagram icon.
+
+Follow button.
+
+Future-ready Graph API.
+
+Keep placeholder service.
+
+====================================================
+17. FAQ
+====================================================
+
+Luxury accordion.
+
+Smooth open animation.
+
+Rotate arrow.
+
+Better spacing.
+
+====================================================
+18. CONTACT
+====================================================
+
+Luxury contact layout.
+
+Map
+
+Phone
+
+WhatsApp
+
+Email
+
+Address
+
+Working Hours
+
+Elegant form
+
+Floating labels
+
+====================================================
+19. FOOTER
+====================================================
+
+Luxury dark footer.
+
+Use official logo.
+
+Quick links.
+
+Services.
+
+Instagram.
+
+Facebook.
+
+YouTube.
+
+Newsletter.
+
+Copyright.
+
+Back to top button.
+
+====================================================
+20. MICRO INTERACTIONS
+====================================================
+
+Buttons ripple.
+
+Hover shadows.
+
+Card lift.
+
+Image zoom.
+
+Smooth underline.
+
+Loading animation.
+
+Page transitions.
+
+====================================================
+21. PERFORMANCE
+====================================================
+
+Lazy loading.
+
+Image optimization.
+
+Code splitting.
+
+Skeleton loaders.
+
+No layout shift.
+
+Maintain Lighthouse score above 95.
+
+====================================================
+22. RESPONSIVENESS
+====================================================
+
+Test
+
+320
+
+375
+
+768
+
+1024
+
+1280
+
+1440
+
+1920
+
+No overlap.
+
+No horizontal scroll.
+
+Perfect spacing.
+
+====================================================
+23. ACCESSIBILITY
+====================================================
+
+Keyboard navigation.
+
+ARIA labels.
+
+Alt text.
+
+Visible focus.
+
+Contrast ratio.
+
+====================================================
+24. FINAL POLISH
+====================================================
+
+The website should feel like a premium international photography studio.
+
+Everything should be elegant.
+
+Nothing should feel like a template.
+
+Every animation should be smooth.
+
+Every card should align perfectly.
+
+Every section should have generous spacing.
+
+Every hover interaction should feel premium.
+
+Every transition should feel cinematic.
+
+The user should immediately feel that this is a luxury photography brand.
+
+IMPORTANT:
+
+❌ Do not redesign the layout.
+
+❌ Do not remove existing sections.
+
+❌ Do not replace the overall aesthetic.
+
+✅ Only improve polish, spacing, animations, typography, responsiveness, interactions, and premium feel.
+
+The final result should be worthy of a high-end professional photography studio.

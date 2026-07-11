@@ -1,0 +1,1 @@
+- [Khurana Studio polish spec](khurana-polish-spec.md) — 24-item luxury polish pass applied; key decisions on navbar glass, cursor, hero typography, fallback images

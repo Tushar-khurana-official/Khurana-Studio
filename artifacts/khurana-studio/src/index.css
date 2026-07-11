@@ -105,8 +105,8 @@
   --radius: 0.25rem;
 
   --studio-bg: #F7F7F5;
-  --studio-bg-alt: #ECECEC;
-  --studio-dark: #111111;
+  --studio-bg-alt: #EFEFED;
+  --studio-dark: #0F0F0F;
   --studio-text: #171717;
   --studio-muted: #666666;
   --studio-silver: #C0C0C0;
@@ -156,9 +156,49 @@
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Hide default cursor on pointer devices (custom cursor active) */
+  @media (pointer: fine) {
+    * {
+      cursor: none !important;
+    }
+  }
+
+  /* Selection style */
+  ::selection {
+    background-color: rgba(0, 0, 0, 0.12);
+    color: inherit;
   }
 }
 
+/* ──────────────────────────────────────────
+   Utilities
+────────────────────────────────────────── */
+
+/* Hide scrollbar (keep functionality) */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Glass card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.60);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* ──────────────────────────────────────────
+   Lenis smooth scroll
+────────────────────────────────────────── */
 html.lenis, html.lenis body {
   height: auto;
 }
@@ -177,4 +217,26 @@ html.lenis, html.lenis body {
 
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
+}
+
+/* ──────────────────────────────────────────
+   Swiper — testimonials
+────────────────────────────────────────── */
+.testimonials-swiper .swiper-pagination {
+  bottom: 0 !important;
+}
+
+/* ──────────────────────────────────────────
+   Smooth image transitions
+────────────────────────────────────────── */
+img {
+  display: block;
+}
+
+/* ──────────────────────────────────────────
+   Focus ring (accessibility)
+────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid rgba(0, 0, 0, 0.5);
+  outline-offset: 3px;
 }

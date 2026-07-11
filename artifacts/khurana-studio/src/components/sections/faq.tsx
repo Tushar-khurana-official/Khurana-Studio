@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     question: "How many images will we receive?",
-    answer: "While we prioritize quality over quantity, a typical 10-hour wedding yields between 500-800 fully edited images. Every image delivered is individually retouched."
+    answer: "While we prioritize quality over quantity, a typical 10-hour wedding yields between 500–800 fully edited images. Every image delivered is individually retouched to our studio standard."
   },
   {
     question: "Do you provide raw, unedited files?",
@@ -30,27 +30,36 @@ const faqs = [
 
 export const FaqSection = () => {
   return (
-    <section className="py-24 md:py-32 bg-background border-t border-border">
-      <div className="container mx-auto px-6 md:px-12 max-w-4xl">
-        <div className="text-center mb-16">
+    <section className="py-28 md:py-36 bg-background border-t border-border">
+      <div className="container mx-auto px-6 md:px-12 max-w-3xl">
+        <div className="text-center mb-20">
           <FadeIn>
             <span className="font-sans text-xs uppercase tracking-widest text-muted-foreground mb-4 block">
               Information
             </span>
             <h2 className="font-serif text-4xl md:text-5xl text-foreground">
-              Frequently Asked Questions
+              Frequently Asked
             </h2>
           </FadeIn>
         </div>
 
-        <FadeIn delay={0.2}>
-          <Accordion type="single" collapsible className="w-full">
+        <FadeIn delay={0.15}>
+          <Accordion type="single" collapsible className="w-full space-y-0">
             {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border-border py-2">
-                <AccordionTrigger className="font-serif text-xl hover:text-studio-silver transition-colors text-left hover:no-underline [&[data-state=open]]:text-studio-silver">
-                  {faq.question}
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="border-t border-border border-b-0 last:border-b py-1"
+              >
+                <AccordionTrigger className="font-serif text-lg md:text-xl py-7 hover:text-studio-silver transition-colors duration-300 text-left hover:no-underline [&[data-state=open]]:text-foreground group">
+                  <span className="flex items-center gap-4">
+                    <span className="font-sans text-[0.6rem] text-muted-foreground/60 tracking-widest w-5 shrink-0 group-hover:text-studio-silver transition-colors">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    {faq.question}
+                  </span>
                 </AccordionTrigger>
-                <AccordionContent className="font-sans text-muted-foreground font-light leading-relaxed text-base pt-2 pb-6">
+                <AccordionContent className="font-sans text-muted-foreground font-light leading-[1.85] text-[0.93rem] pt-0 pb-8 pl-9 max-w-[580px]">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

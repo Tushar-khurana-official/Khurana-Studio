@@ -21,7 +21,7 @@ export const ServicesSection = () => {
     ));
 
   return (
-    <section className="py-24 md:py-32 bg-studio-bg-alt">
+    <section className="py-28 md:py-36 bg-studio-bg-alt">
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <FadeIn>
@@ -34,49 +34,54 @@ export const ServicesSection = () => {
           <FadeIn direction="left">
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 font-sans text-sm uppercase tracking-widest text-foreground hover:text-muted-foreground transition-colors group"
+              className="inline-flex items-center gap-2 font-sans text-xs uppercase tracking-widest text-foreground hover:text-muted-foreground transition-colors group"
             >
               View All Services
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </FadeIn>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           {isLoading
             ? renderSkeletons()
             : services?.slice(0, 3).map((service, index) => (
-                <FadeIn key={service.id} delay={index * 0.2}>
-                  <Link
-                    href={`/services#${service.id}`}
-                    className="group block cursor-pointer"
-                  >
+                <FadeIn key={service.id} delay={index * 0.15}>
+                  <Link href={`/services#${service.id}`} className="group block cursor-pointer">
+                    {/* Image */}
                     <div className="relative overflow-hidden aspect-[4/5] mb-6">
-                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500 z-10 pointer-events-none" />
+                      <div className="absolute inset-0 bg-black/25 group-hover:bg-black/0 transition-colors duration-600 z-10 pointer-events-none" />
                       <ImageWithFallback
                         src={getServiceImage(service.imageUrl, service.category)}
+                        fallbackSrc={getServiceImage(undefined, service.category)}
                         alt={service.title}
                         objectFit="cover"
                         loading="lazy"
-                        className="w-full h-full transform scale-100 group-hover:scale-105 transition-transform duration-700 ease-out"
+                        className="w-full h-full transform scale-100 group-hover:scale-105 transition-transform duration-[800ms] ease-out"
                       />
+                      {/* Category tag */}
+                      <div className="absolute top-4 left-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-400">
+                        <span className="font-sans text-[0.6rem] uppercase tracking-widest bg-white/90 text-black px-3 py-1">
+                          {service.category}
+                        </span>
+                      </div>
                     </div>
 
-                    <h3 className="font-serif text-2xl text-foreground mb-3 group-hover:text-studio-silver transition-colors">
+                    <h3 className="font-serif text-2xl text-foreground mb-2.5 group-hover:text-studio-silver transition-colors duration-300">
                       {service.title}
                     </h3>
 
-                    <p className="font-sans text-sm text-muted-foreground font-light mb-4 line-clamp-2">
+                    <p className="font-sans text-sm text-muted-foreground font-light mb-5 leading-relaxed line-clamp-2 max-w-[360px]">
                       {service.description}
                     </p>
 
                     <div className="flex items-center gap-2 font-sans text-xs uppercase tracking-widest text-foreground">
                       <span className="relative">
                         View Details
-                        <span className="absolute -bottom-1 left-0 w-0 h-px bg-foreground group-hover:w-full transition-all duration-300" />
+                        <span className="absolute -bottom-px left-0 w-0 h-px bg-foreground group-hover:w-full transition-all duration-300" />
                       </span>
                       <ArrowRight
-                        size={14}
+                        size={13}
                         className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
                       />
                     </div>
