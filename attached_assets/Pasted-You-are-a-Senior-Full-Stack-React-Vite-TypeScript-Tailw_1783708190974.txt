@@ -1,0 +1,335 @@
+You are a Senior Full Stack React + Vite + TypeScript + TailwindCSS developer.
+
+Your task is to completely diagnose and fix all frontend bugs without changing the luxury design or layout.
+
+========================================
+BUG #1 - Broken Images
+========================================
+
+Many images across the website are broken.
+
+Tasks:
+
+• Find every <img> component.
+• Check every image source.
+• Fix all incorrect paths.
+• Verify that assets exist.
+• Use the correct Vite asset importing method.
+
+Instead of
+
+<img src="/images/image1.jpg" />
+
+use
+
+import image1 from "@/assets/image1.jpg"
+
+or
+
+new URL(...)
+
+depending on the project structure.
+
+If an image does not exist:
+
+Replace it with a premium royalty-free placeholder from Unsplash.
+
+Use photography related images.
+
+Wedding
+
+Portrait
+
+Fashion
+
+Commercial
+
+Studio
+
+Landscape
+
+Product Photography
+
+Do NOT leave any broken images.
+
+Every image should load correctly.
+
+========================================
+BUG #2 - Image Loading Component
+========================================
+
+Create a reusable component.
+
+<ImageWithFallback />
+
+Features:
+
+✔ Loading skeleton
+
+✔ Lazy Loading
+
+loading="lazy"
+
+✔ Error fallback
+
+onError replace image automatically
+
+✔ Fade animation after loading
+
+✔ Responsive
+
+Replace every image on the website with this reusable component.
+
+========================================
+BUG #3 - Portfolio Images
+========================================
+
+Portfolio page contains broken images.
+
+Fix every portfolio item.
+
+Every image should display correctly.
+
+Categories:
+
+Wedding
+
+Portrait
+
+Fashion
+
+Commercial
+
+Events
+
+Products
+
+Travel
+
+Drone
+
+========================================
+BUG #4 - Blog Images
+========================================
+
+Blog cards have broken thumbnails.
+
+Fix all blog images.
+
+Every article should have:
+
+Featured image
+
+Category
+
+Date
+
+Title
+
+Excerpt
+
+Read More
+
+Use beautiful photography related images.
+
+========================================
+BUG #5 - Testimonials Overlapping
+========================================
+
+The testimonial section is broken.
+
+Texts overlap.
+
+Cards overlap.
+
+Avatar overlaps.
+
+Carousel layout is broken.
+
+Fix everything.
+
+Requirements:
+
+One testimonial visible at a time on mobile.
+
+Two on tablet.
+
+Three on desktop.
+
+Use Swiper.js or Embla Carousel.
+
+Cards must have equal height.
+
+Avatar should never overlap text.
+
+Review stars should align correctly.
+
+Text should wrap naturally.
+
+Buttons should work.
+
+Auto play.
+
+Infinite loop.
+
+Smooth animation.
+
+========================================
+BUG #6 - CSS Overflow
+========================================
+
+Search entire project for
+
+position:absolute
+
+negative margins
+
+fixed widths
+
+overflow bugs
+
+z-index issues
+
+Fix every layout issue.
+
+No overlapping anywhere.
+
+========================================
+BUG #7 - Responsive Testing
+========================================
+
+Test all pages at
+
+320px
+
+375px
+
+768px
+
+1024px
+
+1280px
+
+1440px
+
+1920px
+
+Nothing should overlap.
+
+========================================
+BUG #8 - Instagram Section
+========================================
+
+Current Instagram section uses fake static images.
+
+Convert it into a future-ready Instagram Graph API module.
+
+For now:
+
+Display six beautiful photography placeholders.
+
+Create a service
+
+/services/instagram.ts
+
+Create methods
+
+getPosts()
+
+getProfile()
+
+getReels()
+
+Currently return mock data.
+
+Prepare environment variables
+
+VITE_INSTAGRAM_APP_ID
+
+VITE_INSTAGRAM_APP_SECRET
+
+VITE_INSTAGRAM_ACCESS_TOKEN
+
+When credentials are added later,
+
+the website should automatically fetch
+
+latest posts
+
+latest reels
+
+profile picture
+
+followers
+
+username
+
+without changing UI.
+
+========================================
+BUG #9 - Loading States
+========================================
+
+Every section should have
+
+Skeleton Loading
+
+Image placeholder
+
+Error fallback
+
+Retry button
+
+========================================
+BUG #10 - Console Errors
+========================================
+
+Open browser console.
+
+Fix every
+
+404
+
+Image errors
+
+TypeScript errors
+
+Warnings
+
+Hydration warnings
+
+React warnings
+
+Network failures
+
+========================================
+QUALITY CHECK
+========================================
+
+Run the application.
+
+Verify:
+
+✔ No broken image icons
+
+✔ No overlapping text
+
+✔ No overflowing containers
+
+✔ Portfolio images load
+
+✔ Blog images load
+
+✔ Testimonial carousel works
+
+✔ Instagram placeholder works
+
+✔ Mobile responsive
+
+✔ Lighthouse friendly
+
+✔ Clean console
+
+Do not redesign the UI.
+
+Only fix bugs while preserving the current premium luxury aesthetic.
