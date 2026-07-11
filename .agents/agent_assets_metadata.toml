@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "5pY6RioZf2Chh-uq6Nxvk"
+uri = "file://khurana-studio.zip"
+type = "unspecified"
+title = "Khurana Studio — Project ZIP"
